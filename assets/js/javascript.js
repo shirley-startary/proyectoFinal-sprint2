@@ -12,13 +12,17 @@ function crearLista(){
   //contenedor.id="contenedor"+contador;
   var botonX =document.createElement("button");
   botonX.id="XX"+contador;
-  botonX.setAttribute("onclick","remover();")
+  botonX.setAttribute("onclick","removerLista();")
+
 
   var tr=document.createElement("tr");
   tr.id="tr"+contador;
 
   var td=document.createElement("td");
   td.id="td"+contador;
+
+
+
 
   var article =document.createElement("article");
   article.id="article"+contador;
@@ -41,13 +45,13 @@ function crearLista(){
   console.log(contenedor);
   contenedor.appendChild(tr);
   tr.appendChild(td);
+  td.appendChild(botonX).innerHTML="x"
   td.appendChild(article)
   article.appendChild(h2);
   article.appendChild(ul);
   //ul.appendChild(li);
   article.appendChild(input);
   article.appendChild(boton).innerHTML="Crear Pendiente"
-  tr.appendChild(botonX).innerHTML="x"
   h2.innerText=titulo;
 
   document.getElementById("titulo").value='';
@@ -68,6 +72,10 @@ function crearPendiente(){
 
 }
 
-function removerElemento(){
-  
+function removerLista(){
+  var celda = document.getElementById("tr"+contador);
+  console.log(celda);
+  celda.parentNode.removeChild(celda);
 }
+
+function removerPandientes
