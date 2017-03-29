@@ -42,7 +42,7 @@ function crearLista(){
   boton.id="boton"+contador;
   boton.setAttribute("onclick","crearPendiente();")
   //boton.onclick="crearPendiente()";
-  console.log(contenedor);
+
   contenedor.appendChild(tr);
   tr.appendChild(td);
   td.appendChild(botonX).innerHTML="x"
@@ -61,15 +61,16 @@ function crearPendiente(){
   var elemento =document.getElementById("entradalista"+contador).value;
   var ul =document.getElementById("lista"+contador);
   var li=document.createElement("li");
-  var boton =document.createElement("button");
-  boton.id="X"+contador;
-  boton.setAttribute("onclick","remover();")
+  var botonPendiente =document.createElement("button");
+  li.id="li"+contador;
+  botonPendiente.id="X"+contador;
+  botonPendiente.setAttribute("onclick","removerPendientes();")
   ul.appendChild(li);
 
   li.innerText=elemento
-  ul.appendChild(boton).innerHTML="X";
+  ul.appendChild(botonPendiente).innerHTML="X";
   document.getElementById("entradalista"+contador).value='';
-
+  console.log(contenedor);
 }
 
 function removerLista(){
@@ -78,4 +79,9 @@ function removerLista(){
   celda.parentNode.removeChild(celda);
 }
 
-function removerPandientes
+function removerPendientes(){
+  var elemento = document.getElementById("li"+contador);
+  elemento.parentNode.removeChild(elemento);
+  var botonPendiente =document.getElementById("X"+contador);
+  botonPendiente.parentNode.removeChild(botonPendiente);
+}

@@ -4,3 +4,4 @@
 3. Creando la lista, y el evento onclick de los botones, para añadir los pendientes.
 4. creando los botones de la lista para elimiarlos.
 5. se creó la funcion para eliminar toda la lista.
+6. se creo la funcion para eliminar los pendientes.
