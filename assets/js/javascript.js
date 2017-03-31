@@ -1,6 +1,9 @@
+var Listas=[];
+
 function Lista(titulo,contenido){
   this.titulo = titulo;
   this.contenido=contenido;
+  this.pendiente=[];
 }
 
 var contador=0;
@@ -12,8 +15,8 @@ function crearLista(){
   //contenedor.id="contenedor"+contador;
   var botonX =document.createElement("button");
   botonX.id="XX"+contador;
-  botonX.setAttribute("onclick","removerLista();")
-
+  botonX.onclick=removerLista;
+  var lista = new Lista(titulo);
 
   var tr=document.createElement("tr");
   tr.id="tr"+contador;
@@ -40,7 +43,7 @@ function crearLista(){
   input.id="entradalista"+contador;
   var boton =document.createElement("button");
   boton.id="boton"+contador;
-  boton.setAttribute("onclick","crearPendiente();")
+  boton.onclick=crearPendiente;
   //boton.onclick="crearPendiente()";
 
   contenedor.appendChild(tr);
@@ -53,7 +56,7 @@ function crearLista(){
   article.appendChild(input);
   article.appendChild(boton).innerHTML="Crear Pendiente"
   h2.innerText=titulo;
-
+  console.log(contenedor);
   document.getElementById("titulo").value='';
 }
 
